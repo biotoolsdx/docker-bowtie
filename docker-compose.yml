@@ -1,0 +1,17 @@
+version: "3.3"
+
+networks:
+  bioinfo:
+
+services:
+  mirdeep2:
+    image: btrspg/bowtie:latest
+    hostname: dk-bowtie
+    container_name: dk-bowtie
+    tty: true
+    restart: always
+    volumes:
+      - /tmp:/tmp
+    networks:
+      - bioinfo
+    user: "999:999"
